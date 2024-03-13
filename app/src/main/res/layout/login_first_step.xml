@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#309800"
+    android:id="@+id/login">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="190dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppins_extralight_italic"
+        android:text="Batch"
+        android:textColor="@color/white"
+        android:textSize="70sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="95dp"
+        android:fontFamily="@font/poppins_bold_italic"
+        android:text="1999"
+        android:textColor="@android:color/white"
+        android:textSize="50sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="155dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="&quot;Pinaka Grandest&quot; Alumni Homecoming!"
+        android:textColor="@color/white"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="190dp"
+        app:srcCompat="@drawable/horizontal_lines"
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription,HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="TODO"
+        app:srcCompat="@drawable/eclippse1"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="432dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="-45dp"
+            app:cardCornerRadius="40dp"
+            tools:ignore="VisualLintBounds" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="350dp"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Key Code"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="400dp"
+        android:fontFamily="@font/poppins_light"
+        android:text="Please enter key code to proceed."
+        android:textColor="@android:color/black"
+        android:textSize="14sp"
+        tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="450dp"
+        android:contentDescription="TODO"
+        app:srcCompat="@drawable/login"
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="155dp"
+        android:layout_marginTop="540dp"
+        android:fontFamily="@font/poppins_light"
+        android:text="Enter key code"
+        android:textColor="@android:color/black"
+        tools:ignore="HardcodedText" />
+
+    <!-- Key Codes Section -->
+    <LinearLayout
+        android:id="@+id/keyCodesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView6"
+        android:layout_marginTop="40dp"
+        android:gravity="center">
+
+        <EditText
+            android:id="@+id/keyCode1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:hint=""
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#000"
+            android:textSize="18sp"
+            tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/keyCode2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:hint=""
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#000"
+            android:textSize="18sp"
+            tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/keyCode3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:hint=""
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#000"
+            android:textSize="18sp"
+            tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <EditText
+            android:id="@+id/keyCode4"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/border"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="1"
+            android:textColor="#000"
+            android:textSize="18sp"
+            tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/keyCodesContainer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/green"
+        android:elevation="4dp"
+        android:padding="10dp"
+        android:radius="20dp"
+        android:text="SUBMIT"
+        android:textColor="@color/white"
+        tools:ignore="HardcodedText,TextContrastCheck" />
+
+</RelativeLayout>

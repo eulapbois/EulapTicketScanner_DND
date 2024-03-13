@@ -1,0 +1,13 @@
+<resources>
+
+    <style name="Theme.EulapTicketScanner_DND" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <!-- Add any customizations you need -->
+    </style>
+
+    <string name="app_name">TicketScanner</string>
+    <string name="company_logo_description">Company Logo</string>
+    <string name="continue_button_text">Continue</string>
+    <string name="eulap_text">Presented by EULAP</string>
+
+</resources>

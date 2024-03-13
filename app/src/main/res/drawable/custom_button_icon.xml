@@ -1,0 +1,6 @@
+<!-- res/drawable/custom_button_icon.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/img"
+    android:width="40dp"
+    android:height="40dp" />
+</layer-list>
