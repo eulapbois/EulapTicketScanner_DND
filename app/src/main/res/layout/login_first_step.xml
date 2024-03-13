@@ -8,7 +8,7 @@
     android:id="@+id/login">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/batch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="190dp"
@@ -20,7 +20,7 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="280dp"
@@ -32,7 +32,7 @@
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/quote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="90dp"
@@ -43,7 +43,7 @@
         tools:ignore="HardcodedText" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/horizontal_lines"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="190dp"
@@ -52,7 +52,7 @@
         tools:ignore="ContentDescription,HardcodedText" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ellipse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="TODO"
@@ -60,6 +60,7 @@
         tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
 
     <LinearLayout
+        android:id="@+id/popUp"
         android:layout_width="match_parent"
         android:layout_height="432dp"
         android:layout_alignParentBottom="true"
@@ -69,29 +70,30 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="-45dp"
+            app:cardBackgroundColor="#F2FAE9"
             app:cardCornerRadius="40dp"
             tools:ignore="VisualLintBounds" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/keyCodeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="350dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="340dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Key Code"
         android:textColor="@android:color/black"
-        android:textSize="24sp"
+        android:textSize="28dp"
         tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/enterCodeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="385dp"
         android:fontFamily="@font/poppins_light"
         android:text="Please enter key code to proceed."
         android:textColor="@android:color/black"
@@ -99,7 +101,7 @@
         tools:ignore="HardcodedText" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/verification"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="180dp"
@@ -109,7 +111,7 @@
         tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/enterKeyText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="155dp"
@@ -124,7 +126,7 @@
         android:id="@+id/keyCodesContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textView6"
+        android:layout_below="@id/enterKeyText"
         android:layout_marginTop="40dp"
         android:gravity="center">
 
