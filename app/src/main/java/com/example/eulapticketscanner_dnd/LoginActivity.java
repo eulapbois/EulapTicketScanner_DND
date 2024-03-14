@@ -14,8 +14,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
-public class LoginActivity extends AppCompatActivity {
+public class    LoginActivity extends AppCompatActivity {
 
     Button submitButton;
     TextView textViewErrorMessage; // Declare textViewErrorMessage as a class member
@@ -70,7 +71,22 @@ public class LoginActivity extends AppCompatActivity {
     // Define your onSuccess method
     private void onSuccess() {
         // Display success message using Toast
-        Toast.makeText(getApplicationContext(), "User verified successfully", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getApplicationContext(), "User verified successfully", Toast.LENGTH_SHORT).show();
+        ImageView verificationImage = findViewById(R.id.verification);
+        verificationImage.setImageResource(R.drawable.success_image);
+        verificationImage.setVisibility(ImageView.VISIBLE);
+
+        // Change the border color of the EditTexts to green
+        EditText keyCode1 = findViewById(R.id.keyCode1);
+        EditText keyCode2 = findViewById(R.id.keyCode2);
+        EditText keyCode3 = findViewById(R.id.keyCode3);
+        EditText keyCode4 = findViewById(R.id.keyCode4);
+
+        keyCode1.setBackgroundResource(R.drawable.border_green);
+        keyCode2.setBackgroundResource(R.drawable.border_green);
+        keyCode3.setBackgroundResource(R.drawable.border_green);
+        keyCode4.setBackgroundResource(R.drawable.border_green);
+
     }
 
     // Define your onFailure method with error message parameter
