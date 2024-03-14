@@ -115,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="155dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="510dp"
         android:fontFamily="@font/poppins_light"
         android:text="Enter key code"
         android:textColor="@android:color/black"
@@ -127,7 +127,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/enterKeyText"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:gravity="center">
 
         <EditText
@@ -202,7 +202,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/keyCodesContainer"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="62dp"
         android:backgroundTint="@color/green"
         android:elevation="4dp"
         android:padding="10dp"

@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -105,24 +106,39 @@ public class LoginActivity extends AppCompatActivity {
         keyCode4.setBackgroundResource(R.drawable.border_red);
 
         // Remove any previous error message views to avoid duplication
-        LinearLayout keyCodesContainer = findViewById(R.id.keyCodesContainer);
-        keyCodesContainer.removeView(textViewErrorMessage);
+        RelativeLayout parentLayout = findViewById(R.id.login); // Assuming parent layout id is "login"
+        if (textViewErrorMessage != null) {
+            parentLayout.removeView(textViewErrorMessage); // Remove any existing error message
+        }
+
+        // Create a TextView to hold the error message
+        textViewErrorMessage = new TextView(this);
 
         // Set up layout parameters for the error message
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
+        RelativeLayout.LayoutParams paramsErrorMessage = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
         );
-        params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM; // Set gravity to bottom
-        textViewErrorMessage.setLayoutParams(params);
+        paramsErrorMessage.addRule(RelativeLayout.BELOW, R.id.keyCodesContainer); // Place error message below key codes
+        paramsErrorMessage.addRule(RelativeLayout.CENTER_HORIZONTAL); // Center horizontally
+        paramsErrorMessage.setMargins(0, 20, 0, 0); // Adjust top margin as needed
+        textViewErrorMessage.setLayoutParams(paramsErrorMessage);
 
         textViewErrorMessage.setText(errorMessage);
         textViewErrorMessage.setTextColor(Color.RED);
         textViewErrorMessage.setPadding(20, 20, 20, 20);
 
-        // Add the error message TextView to the keyCodesContainer LinearLayout
-        keyCodesContainer.addView(textViewErrorMessage);
+        // Add the error message TextView to the parent RelativeLayout
+        parentLayout.addView(textViewErrorMessage);
+
+        // Move the "Enter Key Code" text above the key codes
+        TextView enterKeyText = findViewById(R.id.enterKeyText);
+        RelativeLayout.LayoutParams paramsEnterKeyText = (RelativeLayout.LayoutParams) enterKeyText.getLayoutParams();
+        paramsEnterKeyText.addRule(RelativeLayout.BELOW, textViewErrorMessage.getId()); // Place "Enter Key Code" text below error message
+        enterKeyText.setLayoutParams(paramsEnterKeyText);
     }
+
+
 }
 
 
