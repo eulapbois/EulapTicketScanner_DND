@@ -15,7 +15,8 @@
         android:fontFamily="@font/poppins_extralight_italic"
         android:text="Batch"
         android:textColor="@color/white"
-        android:textSize="70sp" />
+        android:textSize="70sp"
+        tools:ignore="HardcodedText,RtlHardcoded" />
 
 
 
@@ -28,7 +29,8 @@
         android:fontFamily="@font/poppins_bold_italic"
         android:text="1999"
         android:textColor="@android:color/white"
-        android:textSize="50sp" />
+        android:textSize="50sp"
+        tools:ignore="HardcodedText,RtlHardcoded" />
 
     <TextView
         android:id="@+id/textView3"
@@ -38,7 +40,8 @@
         android:layout_marginTop="155dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="&quot;Pinaka Grandest&quot; Alumni Homecoming!"
-        android:textColor="@android:color/white" />
+        android:textColor="@android:color/white"
+        tools:ignore="HardcodedText,RtlHardcoded,TextContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -46,14 +49,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="190dp"
         app:srcCompat="@drawable/horizontal_lines"
-        android:contentDescription="TODO" />
+        android:contentDescription="TODO"
+        tools:ignore="ContentDescription,HardcodedText" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="TODO"
         app:srcCompat="@drawable/eclippse1"
-        android:contentDescription="TODO" />
+        tools:ignore="ContentDescription,HardcodedText,ImageContrastCheck" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,7 +70,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardCornerRadius="40dp"
-            android:layout_marginBottom="-45dp"/>
+            android:layout_marginBottom="-45dp"
+            tools:ignore="VisualLintBounds" />
 
     </LinearLayout>
 
@@ -73,23 +79,25 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="300dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Key Code"
         android:textColor="@android:color/black"
-        android:textSize="28dp" />
+        android:textSize="28sp"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="338dp"
         android:fontFamily="@font/poppins_light"
         android:text="Please enter key code to proceed."
         android:textColor="@android:color/black"
-        android:textSize="14dp" />
+        android:textSize="14sp"
+        tools:ignore="HardcodedText,TextSizeCheck" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -97,29 +105,32 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"
         android:layout_marginTop="450dp"
-        app:srcCompat="@drawable/success_image" />
+        app:srcCompat="@drawable/success_image"
+        tools:ignore="ContentDescription,ImageContrastCheck,RtlHardcoded" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="600dp"
         android:fontFamily="@font/poppins_light"
         android:text="Your login verification has been "
         android:textColor="#27B924"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
+        android:layout_marginStart="100dp"
         android:layout_marginTop="625dp"
         android:fontFamily="@font/poppins_light"
         android:text=" completed successfully"
         android:textColor="#27B924"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
 
 </RelativeLayout>

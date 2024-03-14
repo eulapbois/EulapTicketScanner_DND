@@ -1,16 +1,18 @@
+//LoginActivity.java
 package com.example.eulapticketscanner_dnd;
 
+import android.app.AlertDialog;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.Button;
 import android.widget.EditText;
-import android.util.Log;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
-
-
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -38,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                 String code4 = keyCode4.getText().toString().trim();
 
                 if (code1.isEmpty() || code2.isEmpty() || code3.isEmpty() || code4.isEmpty()) {
-                    onFailure("Invalid keycode");
+                    onFailure();
                 } else {
                     // Simulate user verification
                     boolean userVerified = verifyUser(code1, code2, code3, code4);
@@ -46,11 +48,11 @@ public class LoginActivity extends AppCompatActivity {
                     if (userVerified) {
                         onSuccess();
                     } else {
-                        onFailure("User verification failed");
+                        onFailureWithDelay("User verification failed");
                     }
                 }
             } catch (Exception e) {
-                onFailure("An error occurred: " + e.getMessage());
+                onFailureWithDelay("An error occurred: " + e.getMessage());
             }
         });
 
@@ -71,8 +73,55 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     // Define your onFailure method with error message parameter
-    private void onFailure(String errorMessage) {
-        // Display error message using Toast
-        Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show();
+    private void onFailure() {
+        // Display error message using AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Verification Failed")
+                .setMessage("Invalid keycode")
+                .setPositiveButton("OK", (dialog, which) -> {
+                    // Do nothing or handle as needed
+                    dialog.dismiss(); // Dismiss the dialog
+                })
+                .setCancelable(false); // Make it non-cancelable
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    // Define your onFailure method with error message parameter and delay
+// Display custom toast message with error icon and red-colored error message
+// Display custom toast message with error icon and red-colored error message
+// Display custom toast message with error icon and red-colored error message
+// Display custom toast message with error icon and red-colored error message
+// Display custom toast message with error icon and red-colored error message
+    private void onFailureWithDelay(String errorMessage) {
+        // Create a TextView to hold the error message
+        TextView textViewErrorMessage = new TextView(getApplicationContext());
+        textViewErrorMessage.setText(errorMessage);
+        textViewErrorMessage.setTextColor(Color.RED);
+
+        // Set padding for the TextView (optional)
+        textViewErrorMessage.setPadding(20, 20, 20, 20);
+
+        // Create a LinearLayout to hold the icon and the error message
+        LinearLayout layout = new LinearLayout(getApplicationContext());
+        layout.setOrientation(LinearLayout.HORIZONTAL);
+        layout.setGravity(Gravity.CENTER); // Set gravity to center
+
+        // Create an ImageView for the error icon
+        ImageView imageViewError = new ImageView(getApplicationContext());
+        imageViewError.setImageResource(R.drawable.error);
+        // Set padding for the ImageView (optional)
+        imageViewError.setPadding(0, 0, 20, 0);
+
+        // Add the error icon and the error message to the LinearLayout
+        layout.addView(imageViewError);
+        layout.addView(textViewErrorMessage);
+
+        // Create and show custom toast
+        Toast toast = new Toast(getApplicationContext());
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(layout);  // Set the LinearLayout as the view for the toast
+        toast.setGravity(Gravity.CENTER, 0, 0); // Center the toast on the screen
+        toast.show();
     }
 }
