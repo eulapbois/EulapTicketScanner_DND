@@ -206,8 +206,9 @@
         android:backgroundTint="@color/green"
         android:elevation="4dp"
         android:padding="10dp"
-        android:radius="20dp"
+        android:radius="30dp"
         android:text="SUBMIT"
+
         android:textColor="@color/white"
         tools:ignore="HardcodedText,TextContrastCheck" />
 
