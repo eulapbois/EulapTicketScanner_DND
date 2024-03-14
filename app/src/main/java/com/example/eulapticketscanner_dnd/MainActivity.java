@@ -1,6 +1,5 @@
 // MainActivity.java
 package com.example.eulapticketscanner_dnd;
-
 import android.content.Intent;
 import android.os.Bundle;
 
