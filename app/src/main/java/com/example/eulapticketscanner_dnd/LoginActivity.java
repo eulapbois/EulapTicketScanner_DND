@@ -17,16 +17,18 @@ import androidx.appcompat.app.AppCompatActivity;
 public class LoginActivity extends AppCompatActivity {
 
     Button submitButton;
-    ImageView verificationImage;
+    TextView textViewErrorMessage; // Declare textViewErrorMessage as a class member
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_first_step);
 
+        // Remove the data type from the local variable declaration
         submitButton = findViewById(R.id.submitButton);
-        verificationImage = findViewById(R.id.verification);
+        textViewErrorMessage = new TextView(this); // Initialize textViewErrorMessage
 
+        // Set onClickListener using lambda expression
         submitButton.setOnClickListener(v -> {
             try {
                 EditText keyCode1 = findViewById(R.id.keyCode1);
@@ -42,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
                 if (code1.isEmpty() || code2.isEmpty() || code3.isEmpty() || code4.isEmpty()) {
                     onFailure();
                 } else {
+                    // Simulate user verification
                     boolean userVerified = verifyUser(code1, code2, code3, code4);
 
                     if (userVerified) {
@@ -56,27 +59,35 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    // Method to verify user
     private boolean verifyUser(String code1, String code2, String code3, String code4) {
+        // Implement your user verification logic here
+        // For demonstration purposes, return true if all codes are "1234"
         return code1.equals("1") && code2.equals("2") && code3.equals("3") && code4.equals("4");
     }
 
+    // Define your onSuccess method
     private void onSuccess() {
+        // Display success message using Toast
         Toast.makeText(getApplicationContext(), "User verified successfully", Toast.LENGTH_SHORT).show();
     }
 
+    // Define your onFailure method with error message parameter
     private void onFailure() {
+        // Display error message using AlertDialog
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Verification Failed")
                 .setMessage("Invalid keycode")
-                .setPositiveButton("OK", (dialog, which) -> dialog.dismiss())
-                .setCancelable(false);
+                .setPositiveButton("OK", (dialog, which) -> {
+                    // Do nothing or handle as needed
+                    dialog.dismiss(); // Dismiss the dialog
+                })
+                .setCancelable(false); // Make it non-cancelable
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
-
-        // Replace verification image with error logo
-        verificationImage.setImageResource(R.drawable.error);
     }
 
+    // Define your onFailure method with error message parameter and delay
     private void onFailureWithDelay(String errorMessage) {
         // Change the image to errorLogo
         ImageView verificationImage = findViewById(R.id.verification);
@@ -93,35 +104,27 @@ public class LoginActivity extends AppCompatActivity {
         keyCode3.setBackgroundResource(R.drawable.border_red);
         keyCode4.setBackgroundResource(R.drawable.border_red);
 
-        // Create a TextView to hold the error message
-        TextView textViewErrorMessage = new TextView(getApplicationContext());
+        // Remove any previous error message views to avoid duplication
+        LinearLayout keyCodesContainer = findViewById(R.id.keyCodesContainer);
+        keyCodesContainer.removeView(textViewErrorMessage);
+
+        // Set up layout parameters for the error message
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+        );
+        params.gravity = Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM; // Set gravity to bottom
+        textViewErrorMessage.setLayoutParams(params);
+
         textViewErrorMessage.setText(errorMessage);
         textViewErrorMessage.setTextColor(Color.RED);
-
-        // Set padding for the TextView (optional)
         textViewErrorMessage.setPadding(20, 20, 20, 20);
 
-        // Create a LinearLayout to hold the icon and the error message
-        LinearLayout layout = new LinearLayout(getApplicationContext());
-        layout.setOrientation(LinearLayout.HORIZONTAL);
-        layout.setGravity(Gravity.CENTER); // Set gravity to center
-
-        // Create an ImageView for the error icon
-        ImageView imageViewError = new ImageView(getApplicationContext());
-        imageViewError.setImageResource(R.drawable.error);
-        // Set padding for the ImageView (optional)
-        imageViewError.setPadding(0, 0, 20, 0);
-
-        // Add the error icon and the error message to the LinearLayout
-        layout.addView(imageViewError);
-        layout.addView(textViewErrorMessage);
-
-        // Create and show custom toast
-        Toast toast = new Toast(getApplicationContext());
-        toast.setDuration(Toast.LENGTH_SHORT);
-        toast.setView(layout);  // Set the LinearLayout as the view for the toast
-        toast.setGravity(Gravity.CENTER, 0, 0); // Center the toast on the screen
-        toast.show();
+        // Add the error message TextView to the keyCodesContainer LinearLayout
+        keyCodesContainer.addView(textViewErrorMessage);
     }
-
 }
+
+
+
+
