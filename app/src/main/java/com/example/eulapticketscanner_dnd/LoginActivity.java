@@ -1,20 +1,16 @@
 //LoginActivity.java
 package com.example.eulapticketscanner_dnd;
 
-import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 public class    LoginActivity extends AppCompatActivity {
 
@@ -44,7 +40,7 @@ public class    LoginActivity extends AppCompatActivity {
                 String code4 = keyCode4.getText().toString().trim();
 
                 if (code1.isEmpty() || code2.isEmpty() || code3.isEmpty() || code4.isEmpty()) {
-                    onFailure();
+                    isEmpty();
                 } else {
                     // Simulate user verification
                     boolean userVerified = verifyUser(code1, code2, code3, code4);
@@ -74,7 +70,10 @@ public class    LoginActivity extends AppCompatActivity {
 //        Toast.makeText(getApplicationContext(), "User verified successfully", Toast.LENGTH_SHORT).show();
         ImageView verificationImage = findViewById(R.id.verification);
         verificationImage.setImageResource(R.drawable.success_image);
-        verificationImage.setVisibility(ImageView.VISIBLE);
+         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) verificationImage.getLayoutParams();
+         layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
+         layoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
+         verificationImage.setLayoutParams(layoutParams);
 
         // Change the border color of the EditTexts to green
         EditText keyCode1 = findViewById(R.id.keyCode1);
@@ -87,21 +86,45 @@ public class    LoginActivity extends AppCompatActivity {
         keyCode3.setBackgroundResource(R.drawable.border_green);
         keyCode4.setBackgroundResource(R.drawable.border_green);
 
+        //remove keyCodeText and enterCodeText
+        keyCode1.setText("");
+        keyCode2.setText("");
+        keyCode3.setText("");
+        keyCode4.setText("");
+
+        // Remove any previous error message views to avoid duplication
+        RelativeLayout parentLayout = findViewById(R.id.login); // Assuming parent layout id is "login"
+        if (textViewErrorMessage!= null) {
+            parentLayout.removeView(textViewErrorMessage);
+        }
+
+        // Create a new TextView to display error message
+        textViewErrorMessage = new TextView(this); // Initialize textViewErrorMessage
+        textViewErrorMessage.setTextColor(Color.BLACK);
+        textViewErrorMessage.setGravity(Gravity.CENTER);
+        textViewErrorMessage.setPadding(10, 10, 10, 10);
+        textViewErrorMessage.setBackgroundColor(Color.WHITE);
+        textViewErrorMessage.setTextSize(20);
+
     }
 
     // Define your onFailure method with error message parameter
-    private void onFailure() {
+    private void isEmpty() {
         // Display error message using AlertDialog
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Verification Failed")
-                .setMessage("Invalid keycode")
-                .setPositiveButton("OK", (dialog, which) -> {
-                    // Do nothing or handle as needed
-                    dialog.dismiss(); // Dismiss the dialog
-                })
-                .setCancelable(false); // Make it non-cancelable
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+        ImageView verificationImage = findViewById(R.id.verification);
+        verificationImage.setImageResource(R.drawable.error);
+
+
+        // Change the border color of the EditTexts to red
+        EditText keyCode1 = findViewById(R.id.keyCode1);
+        EditText keyCode2 = findViewById(R.id.keyCode2);
+        EditText keyCode3 = findViewById(R.id.keyCode3);
+        EditText keyCode4 = findViewById(R.id.keyCode4);
+
+        keyCode1.setBackgroundResource(R.drawable.border_red);
+        keyCode2.setBackgroundResource(R.drawable.border_red);
+        keyCode3.setBackgroundResource(R.drawable.border_red);
+        keyCode4.setBackgroundResource(R.drawable.border_red);
     }
 
     // Define your onFailure method with error message parameter and delay
