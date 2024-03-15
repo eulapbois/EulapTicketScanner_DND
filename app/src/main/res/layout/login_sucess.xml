@@ -64,35 +64,38 @@
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:cardCornerRadius="40dp"
-            android:layout_marginBottom="-45dp"/>
+            android:layout_marginBottom="-45dp"
+            app:cardBackgroundColor="#F2FAE9"
+            app:cardCornerRadius="40dp" />
 
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/keyCodeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="340dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="Key Code"
         android:textColor="@android:color/black"
-        android:textSize="28dp" />
+        android:textSize="28dp"
+        tools:ignore="HardcodedText" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/enterCodeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="338dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="385dp"
         android:fontFamily="@font/poppins_light"
         android:text="Please enter key code to proceed."
         android:textColor="@android:color/black"
-        android:textSize="14dp" />
+        android:textSize="14sp"
+        tools:ignore="HardcodedText" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/verified"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="150dp"

@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                     if (userVerified) {
                         onSuccess();
                     } else {
-                        onFailureWithDelay("User verification failed");
+                        onFailureWithDelay("Invalid key code. Please try again.");
                     }
                 }
             } catch (Exception e) {
@@ -121,7 +121,8 @@ public class LoginActivity extends AppCompatActivity {
         );
         paramsErrorMessage.addRule(RelativeLayout.BELOW, R.id.keyCodesContainer); // Place error message below key codes
         paramsErrorMessage.addRule(RelativeLayout.CENTER_HORIZONTAL); // Center horizontally
-        paramsErrorMessage.setMargins(0, 20, 0, 0); // Adjust top margin as needed
+        paramsErrorMessage.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM); // Align at the bottom
+        paramsErrorMessage.setMargins(0, 0, 0, 380); // Adjust bottom margin as needed
         textViewErrorMessage.setLayoutParams(paramsErrorMessage);
 
         textViewErrorMessage.setText(errorMessage);
@@ -134,10 +135,9 @@ public class LoginActivity extends AppCompatActivity {
         // Move the "Enter Key Code" text above the key codes
         TextView enterKeyText = findViewById(R.id.enterKeyText);
         RelativeLayout.LayoutParams paramsEnterKeyText = (RelativeLayout.LayoutParams) enterKeyText.getLayoutParams();
-        paramsEnterKeyText.addRule(RelativeLayout.BELOW, textViewErrorMessage.getId()); // Place "Enter Key Code" text below error message
+        paramsEnterKeyText.addRule(RelativeLayout.ABOVE, textViewErrorMessage.getId()); // Place "Enter Key Code" text above error message
         enterKeyText.setLayoutParams(paramsEnterKeyText);
     }
-
 
 }
 
