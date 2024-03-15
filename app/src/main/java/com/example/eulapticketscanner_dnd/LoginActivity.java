@@ -1,6 +1,7 @@
 //LoginActivity.java
 package com.example.eulapticketscanner_dnd;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -59,13 +60,22 @@ public class    LoginActivity extends AppCompatActivity {
 
     // Method to verify user
     private boolean verifyUser(String code1, String code2, String code3, String code4) {
-        // Implement your user verification logic here
-        // For demonstration purposes, return true if all codes are "1234"
-        return code1.equals("1") && code2.equals("2") && code3.equals("3") && code4.equals("4");
+        // Add an array of valid codes
+        String[] validCodes = {"5268", "3940", "7812", "0436", "6351", "9780", "5820", "1934", "8276", "3201"};
+
+        // Concatenate the provided codes into a single string for comparison
+        String concatenatedInput = code1 + code2 + code3 + code4;
+
+        // Check if the concatenated input matches any of the valid codes
+        for (String validCode : validCodes) {
+            if (concatenatedInput.equals(validCode)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    // Define your onSuccess method
-    // Define your onSuccess method
+
     // Define your onSuccess method
     private void onSuccess() {
         // Change the layout to layoutVerified
@@ -91,9 +101,8 @@ public class    LoginActivity extends AppCompatActivity {
     }
 
 
-
-    // Define your onFailure method with error message parameter
     // Define your isEmpty method to display error message when fields are empty
+    @SuppressLint("SetTextI18n")
     private void isEmpty() {
         // Display error message using AlertDialog
         ImageView verificationImage = findViewById(R.id.verification);
