@@ -93,11 +93,11 @@ public class    LoginActivity extends AppCompatActivity {
 
 
     // Define your onFailure method with error message parameter
+    // Define your isEmpty method to display error message when fields are empty
     private void isEmpty() {
         // Display error message using AlertDialog
         ImageView verificationImage = findViewById(R.id.verification);
         verificationImage.setImageResource(R.drawable.error);
-
 
         // Change the border color of the EditTexts to red
         EditText keyCode1 = findViewById(R.id.keyCode1);
@@ -109,7 +109,41 @@ public class    LoginActivity extends AppCompatActivity {
         keyCode2.setBackgroundResource(R.drawable.border_red);
         keyCode3.setBackgroundResource(R.drawable.border_red);
         keyCode4.setBackgroundResource(R.drawable.border_red);
+
+        // Remove any previous error message views to avoid duplication
+        RelativeLayout parentLayout = findViewById(R.id.login); // Assuming parent layout id is "login"
+        if (textViewErrorMessage != null) {
+            parentLayout.removeView(textViewErrorMessage); // Remove any existing error message
+        }
+
+        // Create a TextView to hold the error message
+        textViewErrorMessage = new TextView(this);
+
+        // Set up layout parameters for the error message
+        RelativeLayout.LayoutParams paramsErrorMessage = new RelativeLayout.LayoutParams(
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+        paramsErrorMessage.addRule(RelativeLayout.BELOW, R.id.keyCodesContainer); // Place error message below key codes
+        paramsErrorMessage.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        paramsErrorMessage.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM);// Center horizontally
+        paramsErrorMessage.setMargins(0, 20, 0, 380); // Adjust top margin as needed
+        textViewErrorMessage.setLayoutParams(paramsErrorMessage);
+
+        textViewErrorMessage.setText("Please Enter key code");
+        textViewErrorMessage.setTextColor(Color.RED);
+        textViewErrorMessage.setPadding(20, 20, 20, 20);
+
+        // Add the error message TextView to the parent RelativeLayout
+        parentLayout.addView(textViewErrorMessage);
+
+        // Move the "Enter Key Code" text above the key codes
+        TextView enterKeyText = findViewById(R.id.enterKeyText);
+        RelativeLayout.LayoutParams paramsEnterKeyText = (RelativeLayout.LayoutParams) enterKeyText.getLayoutParams();
+        paramsEnterKeyText.addRule(RelativeLayout.ABOVE, textViewErrorMessage.getId()); // Place "Enter Key Code" text above error message
+        enterKeyText.setLayoutParams(paramsEnterKeyText);
     }
+
 
     // Define your onFailure method with error message parameter and delay
     private void onFailureWithDelay(String errorMessage) {
