@@ -65,48 +65,32 @@ public class    LoginActivity extends AppCompatActivity {
     }
 
     // Define your onSuccess method
+    // Define your onSuccess method
+    // Define your onSuccess method
     private void onSuccess() {
-        // Display success message using Toast
-//        Toast.makeText(getApplicationContext(), "User verified successfully", Toast.LENGTH_SHORT).show();
-        ImageView verificationImage = findViewById(R.id.verification);
-        verificationImage.setImageResource(R.drawable.success_image);
-         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) verificationImage.getLayoutParams();
-         layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL);
-         layoutParams.addRule(RelativeLayout.CENTER_VERTICAL);
-         verificationImage.setLayoutParams(layoutParams);
-
-        // Change the border color of the EditTexts to green
-        EditText keyCode1 = findViewById(R.id.keyCode1);
-        EditText keyCode2 = findViewById(R.id.keyCode2);
-        EditText keyCode3 = findViewById(R.id.keyCode3);
-        EditText keyCode4 = findViewById(R.id.keyCode4);
-
-        keyCode1.setBackgroundResource(R.drawable.border_green);
-        keyCode2.setBackgroundResource(R.drawable.border_green);
-        keyCode3.setBackgroundResource(R.drawable.border_green);
-        keyCode4.setBackgroundResource(R.drawable.border_green);
-
-        //remove keyCodeText and enterCodeText
-        keyCode1.setText("");
-        keyCode2.setText("");
-        keyCode3.setText("");
-        keyCode4.setText("");
+        // Change the layout to layoutVerified
+        setContentView(R.layout.login_sucess);
 
         // Remove any previous error message views to avoid duplication
-        RelativeLayout parentLayout = findViewById(R.id.login); // Assuming parent layout id is "login"
-        if (textViewErrorMessage!= null) {
-            parentLayout.removeView(textViewErrorMessage);
+        RelativeLayout parentLayout = findViewById(R.id.layoutVerified); // Assuming parent layout id is "layoutVerified"
+        if (textViewErrorMessage != null) {
+            parentLayout.removeView(textViewErrorMessage); // Remove any existing error message
         }
 
         // Create a new TextView to display error message
-        textViewErrorMessage = new TextView(this); // Initialize textViewErrorMessage
+        textViewErrorMessage = new TextView(this);
         textViewErrorMessage.setTextColor(Color.BLACK);
         textViewErrorMessage.setGravity(Gravity.CENTER);
         textViewErrorMessage.setPadding(10, 10, 10, 10);
         textViewErrorMessage.setBackgroundColor(Color.WHITE);
         textViewErrorMessage.setTextSize(20);
 
+        // Add the error message TextView to the parent RelativeLayout
+        parentLayout.addView(textViewErrorMessage);
+
     }
+
+
 
     // Define your onFailure method with error message parameter
     private void isEmpty() {
@@ -177,6 +161,8 @@ public class    LoginActivity extends AppCompatActivity {
         paramsEnterKeyText.addRule(RelativeLayout.ABOVE, textViewErrorMessage.getId()); // Place "Enter Key Code" text above error message
         enterKeyText.setLayoutParams(paramsEnterKeyText);
     }
+
+
 
 }
 

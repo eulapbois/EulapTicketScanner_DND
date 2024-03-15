@@ -94,35 +94,51 @@
         android:textSize="14sp"
         tools:ignore="HardcodedText" />
 
-    <ImageView
-        android:id="@+id/verified"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="450dp"
-        app:srcCompat="@drawable/success_image" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="600dp"
-        android:fontFamily="@font/poppins_light"
-        android:text="Your login verification has been "
-        android:textColor="#27B924"
-        android:textSize="18sp" />
+    <RelativeLayout
+        android:id="@+id/layoutVerified"
+        android:layout_width="match_parent"
+        android:layout_height="432dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="625dp"
-        android:fontFamily="@font/poppins_light"
-        android:text=" completed successfully"
-        android:textColor="#27B924"
-        android:textSize="18sp" />
+        <ImageView
+            android:id="@+id/verified"
+            android:layout_width="150dp"
+            android:layout_height="130dp"
+            android:layout_marginLeft="136dp"
+            android:layout_marginTop="900dp"
+            android:layout_marginBottom="0dp"
+            app:srcCompat="@drawable/success_image" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/verified"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="100dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Your login verification has been "
+            android:textColor="#27B924"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView8"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="-100dp"
+            android:layout_marginBottom="0dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="completed successfully"
+            android:textColor="#27B924"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
 
 
 </RelativeLayout>

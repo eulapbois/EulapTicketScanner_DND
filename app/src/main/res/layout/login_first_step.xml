@@ -101,11 +101,12 @@
         android:textSize="14sp"
         tools:ignore="HardcodedText" />
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
+        android:id="@+id/layoutEnterKeyCode"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="432dp"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom">
 
         <ImageView
             android:id="@+id/verification"
@@ -209,7 +210,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/keyCodesContainer"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="62dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="30dp"
             android:backgroundTint="@color/green"
             android:elevation="4dp"
             android:padding="10dp"
