@@ -40,7 +40,7 @@
         android:fontFamily="@font/poppins_semibold"
         android:text="&quot;Pinaka Grandest&quot; Alumni Homecoming!"
         android:textColor="@color/white"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,TextContrastCheck" />
 
     <ImageView
         android:id="@+id/horizontal_lines"
@@ -87,7 +87,7 @@
         android:text="Key Code"
         android:textColor="@android:color/black"
         android:textSize="28dp"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,SpUsage,VisualLintOverlap" />
 
     <TextView
         android:id="@+id/enterCodeText"
@@ -99,7 +99,7 @@
         android:text="Please enter key code to proceed."
         android:textColor="@android:color/black"
         android:textSize="14sp"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,VisualLintOverlap" />
 
     <RelativeLayout
         android:id="@+id/layoutEnterKeyCode"

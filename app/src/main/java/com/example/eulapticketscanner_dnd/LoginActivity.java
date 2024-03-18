@@ -60,10 +60,10 @@ public class    LoginActivity extends AppCompatActivity {
 
     // Method to verify user
     private boolean verifyUser(String code1, String code2, String code3, String code4) {
-        // Add an array of valid codes
+
         String[] validCodes = {"5268", "3940", "7812", "0436", "6351", "9780", "5820", "1934", "8276", "3201"};
 
-        // Concatenate the provided codes into a single string for comparison
+
         String concatenatedInput = code1 + code2 + code3 + code4;
 
         // Check if the concatenated input matches any of the valid codes
@@ -75,11 +75,11 @@ public class    LoginActivity extends AppCompatActivity {
         return false;
     }
 
-
     // Define your onSuccess method
     private void onSuccess() {
         // Change the layout to layoutVerified
-        setContentView(R.layout.login_sucess);
+        setContentView(R.layout.login_success);
+
 
         // Remove any previous error message views to avoid duplication
         RelativeLayout parentLayout = findViewById(R.id.layoutVerified); // Assuming parent layout id is "layoutVerified"
@@ -97,6 +97,12 @@ public class    LoginActivity extends AppCompatActivity {
 
         // Add the error message TextView to the parent RelativeLayout
         parentLayout.addView(textViewErrorMessage);
+
+        //add a 3 seconds delay after displaying login_success
+        new android.os.Handler().postDelayed(() -> {
+            // Navigate to the next activity
+            setContentView(R.layout.activity_main);
+        }, 3000);
 
     }
 
@@ -204,11 +210,4 @@ public class    LoginActivity extends AppCompatActivity {
         paramsEnterKeyText.addRule(RelativeLayout.ABOVE, textViewErrorMessage.getId()); // Place "Enter Key Code" text above error message
         enterKeyText.setLayoutParams(paramsEnterKeyText);
     }
-
-
-
 }
-
-
-
-

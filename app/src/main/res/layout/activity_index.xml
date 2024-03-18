@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#309800">
+
+    <ImageView
+        android:id="@+id/companyLogo"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/company_logo_description"
+        android:src="@drawable/eulap_logo"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/eulapText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/companyLogo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-80dp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/eulap_text"
+        android:textColor="#ffff"
+        android:textSize="30sp"
+        android:textStyle="italic"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/continueButton"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="70dp"
+            android:layout_marginBottom="59dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:paddingEnd="50dp"
+            android:text="@string/continue_button_text"
+            app:cardCornerRadius="40dp"
+            tools:ignore="RtlSymmetry">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:layout_marginLeft="-60dp"
+                    android:text="@string/continue_button_text"
+                    android:textAlignment="center"
+                    android:textSize="30sp" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="-100dp"
+                    android:layout_gravity="center"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:contentDescription="@string/company_logo_description"
+                    android:src="@drawable/img"
+                    tools:ignore="DuplicateSpeakableTextCheck" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</RelativeLayout>

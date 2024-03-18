@@ -4,79 +4,165 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#309800">
+    android:id="@+id/main"
+    tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/companyLogo"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_centerInParent="true"
-        android:contentDescription="@string/company_logo_description"
-        android:src="@drawable/eulap_logo"
-        tools:ignore="ImageContrastCheck" />
-
-    <TextView
-        android:id="@+id/eulapText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/companyLogo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-80dp"
-        android:layout_marginBottom="60dp"
-        android:text="@string/eulap_text"
-        android:textColor="#ffff"
-        android:textSize="30sp"
-        android:textStyle="italic"
-        android:gravity="center" />
-
-    <LinearLayout
+    <androidx.camera.view.PreviewView
+        android:id="@+id/BackgroudView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:gravity="bottom">
+        android:layout_height="match_parent"
+        android:layout_gravity="center" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/continueButton"
-            android:layout_width="300dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="60dp"
-            android:layout_marginEnd="70dp"
-            android:layout_marginBottom="59dp"
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alignmentMode="alignMargins"
+        android:columnCount="2">
+
+        <!-- First Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="vertical"
+            android:layout_row="0"
             android:gravity="center"
-            android:background="@color/white"
-            android:paddingEnd="50dp"
-            android:text="@string/continue_button_text"
-            app:cardCornerRadius="40dp"
-            tools:ignore="RtlSymmetry">
-            <LinearLayout
+            android:background="@color/white">
+
+            <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="10dp"
-                android:layout_gravity="center"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="1"
+                android:layout_margin="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="left">
+                        <ImageButton
+                            android:id="@+id/Return"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="?android:attr/selectableItemBackground"
+                            android:src="@drawable/arrow"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="right">
+
+                    <ImageButton
+                        android:id="@+id/dataview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/burger"
+                        android:background="?android:attr/selectableItemBackground"
+                        />
+                </LinearLayout>
+
+            </GridLayout>
+
+        </LinearLayout>
+
+        <!-- Second Row -->
+        <!-- Third Row -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:gravity="center"
+            android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- TextView 1 inside CardView -->
 
                 <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="sans-serif-condensed-medium"
-                    android:layout_marginLeft="-60dp"
-                    android:text="@string/continue_button_text"
-                    android:textAlignment="center"
-                    android:textSize="30sp" />
-
-                <ImageButton
+                    android:id="@+id/TicketView"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:layout_marginStart="-100dp"
+                    android:layout_height="54dp"
+                    android:ems="6"
+                    android:textStyle="bold"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="14dp"
+                    android:textSize="35sp"
                     android:layout_gravity="center"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:contentDescription="@string/company_logo_description"
-                    android:src="@drawable/img"
-                    tools:ignore="DuplicateSpeakableTextCheck" />
+                    android:textColor="@color/white"/>
+            <!-- Magnified Camera View -->
+            <androidx.cardview.widget.CardView
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:alpha="0.8"
+                >
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-    </LinearLayout>
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    >
 
+                    <!-- ImageView for the picture -->
+                    <ImageView
+                        android:id="@+id/magnifiedImageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="290dp"
+                        android:layout_gravity="top"
+                        android:src="@drawable/ticket"
+                        android:alpha="0.8"/>
+                    <!-- PreviewView for the camera overlay -->
+                    <androidx.camera.view.PreviewView
+                        android:id="@+id/magnifiedTextureView"
+                        android:layout_width="195dp"
+                        android:layout_height="60dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="68dp"
+                        android:layout_gravity="bottom"
+                        />
+                </FrameLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageButton
+                android:id="@+id/Capture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/button"
+                android:background="?android:attr/selectableItemBackground"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="173dp"
+                android:layout_marginBottom="30dp"/>
+
+        </LinearLayout>
+
+
+
+    </GridLayout>
+    </FrameLayout>
 </RelativeLayout>
