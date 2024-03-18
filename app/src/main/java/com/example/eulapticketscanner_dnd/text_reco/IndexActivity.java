@@ -1,5 +1,5 @@
-// MainActivity.java
-package com.example.eulapticketscanner_dnd.textrecognition;
+// IndexActivity.java
+package com.example.eulapticketscanner_dnd.text_reco;
 import android.content.Intent;
 import android.os.Bundle;
 

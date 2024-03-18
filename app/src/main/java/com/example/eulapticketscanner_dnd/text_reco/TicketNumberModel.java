@@ -1,4 +1,4 @@
-package com.example.eulapticketscanner_dnd.textrecognition;
+package com.example.eulapticketscanner_dnd.text_reco;
 
 public class TicketNumberModel {
     String ticketNumber;

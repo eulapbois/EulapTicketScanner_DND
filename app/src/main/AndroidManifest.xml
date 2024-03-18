@@ -26,7 +26,7 @@
         android:theme="@style/Theme.EulapTicketScanner_DND"
         tools:targetApi="34">
         <activity
-            android:name=".textrecognition.IndexActivity"
+            android:name=".text_reco.IndexActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

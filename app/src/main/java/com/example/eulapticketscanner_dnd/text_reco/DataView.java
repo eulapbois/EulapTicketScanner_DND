@@ -1,4 +1,4 @@
-package com.example.eulapticketscanner_dnd.textrecognition;
+package com.example.eulapticketscanner_dnd.text_reco;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;

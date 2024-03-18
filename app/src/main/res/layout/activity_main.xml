@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/main"
-    tools:context=".MainActivity">
+    tools:context=".text_reco.MainActivity">
 
     <androidx.camera.view.PreviewView
         android:id="@+id/BackgroudView"
@@ -45,12 +45,14 @@
                     android:layout_column="0"
                     android:layout_columnWeight="1"
                     android:layout_gravity="left">
-                        <ImageButton
-                            android:id="@+id/Return"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:background="?android:attr/selectableItemBackground"
-                            android:src="@drawable/arrow"/>
+
+                    <ImageButton
+                        android:id="@+id/Return"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:src="@drawable/arrow"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -64,9 +66,9 @@
                         android:id="@+id/dataview"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/burger"
                         android:background="?android:attr/selectableItemBackground"
-                        />
+                        android:src="@drawable/burger"
+                        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
                 </LinearLayout>
 
             </GridLayout>
@@ -90,19 +92,19 @@
 
             <!-- TextView 1 inside CardView -->
 
-                <TextView
-                    android:id="@+id/TicketView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="54dp"
-                    android:ems="6"
-                    android:textStyle="bold"
-                    android:inputType="text"
-                    android:textAlignment="center"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteY="14dp"
-                    android:textSize="35sp"
-                    android:layout_gravity="center"
-                    android:textColor="@color/white"/>
+            <TextView
+                android:id="@+id/TicketView"
+                android:layout_width="wrap_content"
+                android:layout_height="54dp"
+                android:layout_gravity="center"
+                android:ems="6"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="35sp"
+                android:textStyle="bold"
+                tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+                tools:layout_editor_absoluteY="14dp" />
             <!-- Magnified Camera View -->
             <androidx.cardview.widget.CardView
                 android:layout_marginTop="30dp"
@@ -153,11 +155,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/button"
+                android:layout_marginBottom="30dp"
                 android:background="?android:attr/selectableItemBackground"
-                tools:ignore="MissingConstraints"
-                tools:layout_editor_absoluteX="173dp"
-                android:layout_marginBottom="30dp"/>
+                android:src="@drawable/button"
+                tools:ignore="MissingConstraints,SpeakableTextPresentCheck"
+                tools:layout_editor_absoluteX="173dp" />
 
         </LinearLayout>
 
